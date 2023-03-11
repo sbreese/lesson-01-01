@@ -1,0 +1,17 @@
+name: first
+on: push
+
+jobs:
+    job1:
+        name: First job
+        runs-on: ubuntu-latest
+        steps:
+        - name: Step one
+        # commands & actions ("uses") are finnally added here under workflow --> jobs --> steps!
+        - name: Step two
+    job2:
+        name: Second job
+        runs-on: windows-latest
+        steps:
+        - name: Step one
+        - name: Step two
