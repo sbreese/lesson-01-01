@@ -3,24 +3,23 @@ on: push
 
 jobs:
   ubuntu: # could be named "job1"
-    name: First job
-      runs-on: ubuntu-latest
-      steps:
-      - run: date
-      - name: Step one
-      # commands ("run") & actions ("uses") are finnally added here under workflow --> jobs --> steps!
-      # every step must define a `uses` or `run` key
-        uses: actions/checkout@v2
-      - name: Step two - print environment variables for the shell running the command
-          run: env | sort
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
+    #- name: Step one
+    # commands ("run") & actions ("uses") are finnally added here under workflow --> jobs --> steps!
+    # every step must define a `uses` or `run` key
+    #uses: actions/checkout@v2
+    #  - name: Step two - print environment variables for the shell running the command
+    #  run: env | sort
   windows:
     runs-on: windows-latest
     steps:
     - run: date
-    - name: Step one
-      uses: actions/checkout@v2
-    - name: Step two
-       run: "Get-ChildItem Env: | Sort-Object Name" # quotes are required due to colon
+    #- name: Step one
+    #  uses: actions/checkout@v2
+    #- name: Step two
+    #   run: "Get-ChildItem Env: | Sort-Object Name" # quotes are required due to colon
   macos:
     runs-on: macos-latest
     steps:
